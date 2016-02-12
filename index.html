@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+<<<<<<< fd1f68520cc039c707b60b71017a8a10cd42d400
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li,ul{
+            list-style: none;
+        }
+        body{
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        p{
+            width: 1008px;
+            margin: 100px auto;
+        }
+        ul{
+            height: 22px;
+        }
+        li{
+            width: 71px;
+            height: 20px;
+            line-height: 20px;
+            border-right: 1px solid #ffe3a2;
+            border-top: 1px solid #ffe3a2;
+            border-bottom: 1px solid #ffe3a2;
+            text-align: center;
+            float: left;
+            font-size: 14px;
+            background-color: rgb(247, 247, 247);
+        }
+        #drag{
+            width: 1008px;
+            height: 22px;
+            margin: 0 auto;
+            border-left: 1px solid #ffe3a2;
+            position: relative;
+        }
+        .movebox{
+            width: 10px;
+            height: 26px;
+            border: 1px solid #bbb;
+            position: absolute;
+            z-index: 100;
+            top: -4px;
+            cursor: pointer;
+            left: 0;
+            background: #fff;
+        }
+        .movebox .DHKBox{
+            width: 10px;
+            height: 26px;
+            position: relative;
+        }
+        .movebox .DHKBox .DHK{
+            display: inline-block;
+            width: 66px;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #f9d37d;
+            background: #fff3d7;
+            padding: 7px 10px;
+            color: #666;
+            top: -50px;
+            left: -36px;
+            position: absolute;
+        }
+        .movebox .DHKBox .DHK span{
+            margin: 0;
+            height: 24px;
+            line-height: 24px;
+            display:inline-block;
+        }
+        #DHKbuynum{
+            color: #ff0000;
+        }
+        .movebox .DHKBox .jiantou{
+            width: 8px;
+            height: 8px;
+            border: 1px solid #f9d37d;
+            background: #fff3d7;
+            position: absolute;
+            left: 50%;
+            margin-left: -5px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: -26px;
+            z-index: -1;
+        }
+        .movebox .DHKBox .fugai{
+            width: 10px;
+            height: 1px;
+            background: #fff3d7;
+            position: absolute;
+            top: -21px;
+            left: 0px;
+        }
+        p span{
+            font-size: 22px;
+            color: #ff0000;
+        }
+        #huiyuan{
+            color: #000;
+        }
+        #buynum{
+            margin-left: 10px;
+        }
+        #jiage{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <p><span id="huiyuan">月会员</span><span id="buynum">X1</span><span id="jiage">&yen;30元</span></p>
+    <div id="drag">
+        <ul>
+            <li style="background: rgb(255, 243, 214);">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>1年(优惠)</li>
+            <li>2年</li>
+            <li>3年</li>
+        </ul>
+        <div class="movebox" id="movebox">
+            <div class="DHKBox">
+                <div class="DHK" id="DHK">购买<b id="DHKbuynum">1</b>个月</div>
+                <div class="jiantou"></div>
+                <div class="fugai"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var movebox=document.getElementById("movebox");
+        var drag=document.getElementById("drag");
+        var mouseX;
+        var flag=null;
+        var DeletDistance=drag.offsetLeft;
+        var liboxs=document.getElementsByTagName("li");
+        var liWidth=liboxs[0].offsetWidth;
+        //文字内容
+        var huiyuan=document.getElementById("huiyuan");
+        var buynum=document.getElementById("buynum");
+        var jiage=document.getElementById("jiage");
+        var DHKbuynum=document.getElementById("DHKbuynum");
+        var DHK=document.getElementById("DHK");
+
+
+        /*鼠标拖拽效果的实现思路:
+        1.先获取X坐标，再赋值给拖拽目标----》onmousedown 嵌套在onmousemove之中
+        2.什么时候获取x坐标？鼠标移动的时候获取
+        3.什么时候赋值？鼠标左键按下赋值，松开不赋值*/
+        document.onmousemove=function(){        //什么时候获取x坐标？鼠标移动的时候获取
+            getMouseX();//获取鼠标X坐标
+            movebox.onmousedown=function(){
+                  flag=1;
+            };
+            document.onmouseup=function(){
+                flag=0;
+            };
+            if(flag){                           //什么时候赋值？鼠标左键按下赋值，松开不赋值
+                main();
+            }
+            drag.onmouseup=function(){
+                main();
+            }
+        };
+        function getMouseX(object){
+            e=object||window.event;             //此处获取的x坐标是以屏幕左上角为原点
+            mouseX =  e.clientX;
+        }
+        function main(){
+            var usableMouseX=mouseX-DeletDistance-5;
+            if(usableMouseX>0&&usableMouseX<1008){
+                movebox.style.left=usableMouseX+"px";
+                var changeNum=Math.floor(usableMouseX/liWidth);
+                for(var i=0;i<liboxs.length;i++){
+                    if(i>changeNum){
+                        liboxs[i].style.backgroundColor="rgb(247, 247, 247)";
+                    }
+                }
+                for(var j=0;j<changeNum;j++){
+                    liboxs[j+1].style.backgroundColor="rgb(255, 243, 214)";
+                }
+
+                //文字内容更换
+            if(changeNum+1<=11){
+                huiyuan.innerHTML="月会员";
+                buynum.innerHTML="X"+(changeNum+1);
+                jiage.innerHTML="&yen;"+(changeNum+1)*30+"元";
+
+                DHK.innerHTML='购买<b id="DHKbuynum">'+(changeNum+1)+"</b>个月";
+                //以此解决文本长度变化切需要居中的问题,如果直接用span标签，每个便签之间会有间距，加上浮动则无法居中
+            }else{
+                huiyuan.innerHTML="年会员";
+                buynum.innerHTML="X"+(changeNum+1-11);
+                jiage.innerHTML="&yen;"+(changeNum+1-11)*260+"元";
+                DHK.innerHTML='购买<b id="DHKbuynum">'+(changeNum+1-11)+"</b>年"
+            }
+
+
+            }
+
+        }
+    </script>
+</body>
+</html>
+=======
+    <link href="css/index.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script language="javascript">
+        function imgdragstart(){return false;}
+    </script>
+</head>
+<body>
+<!--搜索界面-->
+<div id="serchInterface">
+    <div class="search">
+        <div class="searchBox">
+            <div class="off" id="serchInterfaceOffBtn"></div>
+            <form >
+                <input type="text" class="text" id="serchInterfaceText">
+                <div class="button">
+                    <span></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="hotSearch">
+        <div class="hotSearchBox">
+            <span class="left">热搜</span>
+            <span class="right"></span>
+            <div class="hotWord">
+                <a href="javascript:;"><span>剃须刀</span></a>
+                <a href="javascript:;"><span>口罩</span></a>
+                <a href="javascript:;"><span>路由器</span></a>
+                <a href="javascript:;"><span>充电宝</span></a>
+                <a href="javascript:;"><span>牙膏</span></a>
+                <a href="javascript:;"><span>零食</span></a>
+            </div>
+        </div>
+    </div>
+    <ul class="historyBox">
+        <span class="left">历史</span>
+        <li class="history"><a href="javascipt:;">牙膏</a></li>
+        <li class="history"><a href="javascipt:;">剃须刀</a></li>
+    </ul>
+    <div class="clerHistory">
+        <div class="clerHistoryBtn">清空历史搜索</div>
+    </div>
+</div>
+<!--搜索界面结束-->
+<div id="NonSerchInterface">
+    <!--广告-->
+    <div id="Advertisement">
+        <div class="ADBox">
+            <a class="off"></a>
+            <a class="topLogo"><img src="sucai/ADlogo.png"></a>
+            <div class="text">
+                <span>客户端首单满79元送79元</span>
+                <span>更多特价商品等你抢</span>
+            </div>
+            <a class="link"><img src="sucai/ADlink.png"></a>
+        </div>
+    </div>
+    <!--广告结束-->
+    <!--头部-搜索框-->
+    <div class="header" id="header">
+        <div class="search">
+            <div class="iconBox">
+                <div class="icon-jd"></div>
+            </div>
+            <!--<div class="formBox">-->
+            <form>
+                <div class="formBox">
+                    <div class="icon-fdj"></div>
+                    <input class="text" type="text" id="topSearchText">
+                </div>
+            </form>
+            <!--</div>-->
+            <div class="button" onclick="window.location.href='login.html'">登录</div>
+        </div>
+        <div class="searchBg" id="searchBg"></div>
+    </div>
+    <!--头部搜索框结束-->
+    <!--浮动的回到顶部按钮-->
+    <div class="ToTopBtn" id="ToTopBtn" onclick="window.scrollTo(0,0)">
+        <img src="http://st.360buyimg.com/m/images/index/scroll-to-top-icon.png">
+    </div>
+    <!--浮动的回到顶部按钮结束-->
+    <div class="main minmaxWidth">
+        <!--轮播部分-->
+        <div id="roll">
+            <ul id="rollTouch">
+                <li style="z-index: 11"><a href="javascrpt:;"><img src="sucai/s1.jpg"></a></li>
+                <li><a href="http://www.baidu.com"><img src="sucai/s2.jpg"></a></li>
+                <li><a href="javascrpt:;"><img src="sucai/s3.jpg"></a></li>
+                <li><a href="javascrpt:;"><img src="sucai/s4.jpg"></a></li>
+                <li><a href="javascrpt:;"><img src="sucai/s5.jpg"></a></li>
+                <li><a href="javascrpt:;"><img src="sucai/s6.jpg"></a></li>
+                <li><a href="javascrpt:;"><img src="sucai/s7.jpg"></a></li>
+                <li><a href="javascrpt:;"><img src="sucai/s8.jpg"></a></li>
+                <div style="clear: both"></div>
+            </ul>
+            <!--<div clear="both"></div>-->
+            <ul id="rollIndex">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!--轮播部分结束-->
+        <!--导航部分-->
+        <div class="nav" id="nav">
+            <div class="navBox">
+                <a href="http://www.baidu.com" class="navLink fz12">
+                    <img src="sucai/nav1.png">
+                    <p>分类查询</p>
+                </a>
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav2.png">
+                    <p>物流查询</p>
+                </a>
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav3.png">
+                    <p>购物车</p>
+                </a>
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav4.png">
+                    <p>我的京东</p>
+                </a>
+
+
+
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav5.png">
+                    <p>充值</p>
+                </a>
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav6.png">
+                    <p>购物中心</p>
+                </a>
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav7.png">
+                    <p>京东超市</p>
+                </a>
+                <a href="javascript:;" class="navLink fz12">
+                    <img src="sucai/nav8.png">
+                    <p>我的关注</p>
+                </a>
+            </div>
+        </div>
+        <!--导航结束-->
+        <!--商品-->
+        <div class="commodity">
+            <!--手动滑页部分-->
+            <div class="HandSlide">
+                <div class="HandSlideTitle">
+                    <span class="icon"></span>
+                    <h2>掌上秒杀</h2>
+                    <span class="clock" id="CountdownHour">00</span>
+                    <span class="maohao">:</span>
+                    <span class="clock" id="CountdownMinute">00</span>
+                    <span class="maohao">:</span>
+                    <span class="clock" id="CountdownSeconds">00</span>
+                    <a href="javascript:;" class="HandSlideLink">
+                        <span class="jiantou"></span>
+                        <span>更多秒杀</span>
+                    </a>
+                </div>
+                <div class="HandSlideContainer" id="HandSlideContainer">
+                    <ul class="HandSlideBox" id="HandSlideBox">
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m01.jpg">
+                                    <span class="chaoZhi">超值</span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;9.9</p>
+                                <p class="yuanJia">&yen;29</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m02.jpg">
+                                    <span class="chaoZhi">热卖</span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;36.9</p>
+                                <p class="yuanJia">&yen;108</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m03.jpg">
+                                    <span class="chaoZhi">推荐</span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;399</p>
+                                <p class="yuanJia">&yen;799</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m04.jpg">
+                                    <span class="chaoZhi">值得</span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;399</p>
+                                <p class="yuanJia">&yen;1380</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m05.jpg">
+                                    <span class="chaoZhi">欧美</span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;99</p>
+                                <p class="yuanJia">&yen;199</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m06.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;29</p>
+                                <p class="yuanJia">&yen;36</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m07.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;298</p>
+                                <p class="yuanJia">&yen;1308</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m08.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;99</p>
+                                <p class="yuanJia">&yen;188</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m09.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;98</p>
+                                <p class="yuanJia">&yen;138</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m10.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;39.8</p>
+                                <p class="yuanJia">&yen;99</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m11.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;169</p>
+                                <p class="yuanJia">&yen;358</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m12.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;88</p>
+                                <p class="yuanJia">&yen;880</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m13.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;159</p>
+                                <p class="yuanJia">&yen;1099</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m14.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;149</p>
+                                <p class="yuanJia">&yen;399</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m15.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;9.9</p>
+                                <p class="yuanJia">&yen;78</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m16.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;99</p>
+                                <p class="yuanJia">&yen;488</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m17.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;98</p>
+                                <p class="yuanJia">&yen;399</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m18.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;138</p>
+                                <p class="yuanJia">&yen;1298</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m19.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;168</p>
+                                <p class="yuanJia">&yen;1599</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCell">
+                            <div class="imgBox">
+                                <a href="javascript:;">
+                                    <img src="sucai/m20.jpg">
+                                    <span ></span>
+                                </a>
+                            </div>
+                            <div class="jiaQian">
+                                <p class="xianJia">&yen;99</p>
+                                <p class="yuanJia">&yen;398</p>
+                            </div>
+                        </li>
+                        <li class="HandSlideCellEnd" id="HandSlideCellEnd">
+                            <a href="javascript:;">查看全部</a>
+                        </li>
+
+
+                        <div class="clear"></div>
+
+                    </ul>
+                    <!--<div style="clear: both"></div>-->
+                </div>
+            </div>
+            <!--手动滑页部分结束-->
+            <!--floor1超值购-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    超值购
+                </h2>
+                <div class="l1r2">
+                    <div class="left">
+                        <a href="javascript:;" class="pic1">
+                            <img src="sucai/F1Pic1.jpg">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="pic2">
+                            <img  src="sucai/F1Pic2.jpg">
+                        </a>
+                        <a href="javascript:;" class="pic3">
+                            <img  src="sucai/F1Pic3.jpg">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!--floor1超值购结束-->
+
+            <!--floor2热门活动-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    热门活动
+                </h2>
+                <div class="l2r1">
+                    <div class="left">
+                        <a href="javascript:;" class="pic1">
+                            <img  src="sucai/F2Pic1.jpg">
+                        </a>
+                        <a href="javascript:;" class="pic2">
+                            <img  src="sucai/F2Pic2.jpg">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="pic3">
+                            <img src="sucai/F2Pic3.jpg">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!--floor2热门活动结束-->
+
+            <!--floor3有利可图-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    有利可图
+                </h2>
+                <div class="l1r2">
+                    <div class="left">
+                        <a href="javascript:;" class="pic1">
+                            <img src="sucai/F3Pic1.jpg">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="pic2">
+                            <img  src="sucai/F3Pic2.jpg">
+                        </a>
+                        <a href="javascript:;" class="pic3">
+                            <img  src="sucai/F3Pic3.jpg">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!--floor3有利可图-->
+
+            <!--floor4特色市场-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    特色市场
+                </h2>
+                <div class="l2r1">
+                    <div class="left">
+                        <a href="javascript:;" class="pic1">
+                            <img  src="sucai/F4Pic1.jpg">
+                        </a>
+                        <a href="javascript:;" class="pic2">
+                            <img  src="sucai/F4Pic2.jpg">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="pic3">
+                            <img src="sucai/F4Pic3.jpg">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!--floor4特色市场-->
+            <!--floor5品牌街-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    品牌街
+                </h2>
+                <div class="l1r2">
+                    <div class="left">
+                        <a href="javascript:;" class="pic1">
+                            <img src="sucai/F5Pic1.jpg">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="pic2">
+                            <img  src="sucai/F5Pic2.jpg">
+                        </a>
+                        <a href="javascript:;" class="pic3">
+                            <img  src="sucai/F5Pic3.jpg">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!--floor5品牌街-->
+
+            <!--floor6金融街-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    金融街 包赚翻
+                </h2>
+                <div class="l2r1">
+                    <div class="left">
+                        <a href="javascript:;" class="pic1">
+                            <img  src="sucai/F6Pic1.jpg">
+                        </a>
+                        <a href="javascript:;" class="pic2">
+                            <img  src="sucai/F6Pic2.jpg">
+                        </a>
+                    </div>
+                    <div class="right">
+                        <a href="javascript:;" class="pic3">
+                            <img src="sucai/F6Pic3.jpg">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!--floor6金融街结束-->
+
+            <!--主题馆-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    主题馆
+                </h2>
+                <div>
+                    <ul class="themBox">
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t1.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t2.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t3.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t4.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t5.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t6.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t7.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t8.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t9.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t10.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t11.jpg"></a></li>
+                        <li class="cell"><a href="javascript:;"><img src="sucai/t12.jpg"></a></li>
+                        <li class="themClearLeft"></li>
+                    </ul>
+                </div>
+                <!--<div class="themClearLeft"></div>-->
+            </div>
+            <!--主题馆结束-->
+
+            <!--floor7猜你喜欢（瀑布流动态加载)-->
+            <div class="floor Stocking">
+                <h2 class="title">
+                    猜你喜欢
+                </h2>
+                <a class="moreKnow" id="moreKnow" href="javascript:;">登录后更懂你</a>
+                <ul class="Guess" id="Guess">
+                    <li class="GuessCell" >
+                        <a href="javascript:;">
+                            <div class="imgBox">
+                                <img src="sucai/c01.jpg">
+                            </div>
+                            <div class="MiaoShu">
+                                <span>乔丹格兰男鞋秋冬季全掌气垫跑步鞋男款透气慢跑鞋韩版休闲鞋潮鞋情侣减震运动鞋女鞋 浅兰--情侣款 42乔丹格兰男鞋秋冬季全掌气垫跑步鞋男款透气慢跑鞋韩版休闲鞋潮鞋情侣减震运动鞋女鞋 浅兰--情侣款 42</span>
+                            </div>
+                        </a>
+                        <div class="jiaQian">
+                            <span>&yen;198.00</span>
+                            <a  href="javascript:;">看相似</a>
+                        </div>
+                    </li>
+                    <li class="GuessCell">
+                        <a href="javascript:;">
+                            <div class="imgBox">
+                                <img src="sucai/c01.jpg">
+                            </div>
+                            <div class="MiaoShu">
+                                <span>乔丹格兰男鞋秋冬季全掌气垫跑步鞋男款透气慢跑鞋韩版休闲鞋潮鞋情侣减震运动鞋女鞋 浅兰--情侣款 42乔丹格兰男鞋秋冬季全掌气垫跑步鞋男款透气慢跑鞋韩版休闲鞋潮鞋情侣减震运动鞋女鞋 浅兰--情侣款 42</span>
+                            </div>
+                        </a>
+                        <div class="jiaQian">
+                            <span>&yen;198.00</span>
+                            <a  href="javascript:;">看相似</a>
+                        </div>
+                    </li>
+                    <div class="clear" id="GuessCellClear"></div>
+                    <div class="ContinueLoadBox" id="ContinueLoadBox">
+                        <a class="ContinueLoad" href="javascript:void(0);">点击继续加载</a>
+                    </div>
+                </ul>
+                <!--<div class="clear" id=""></div>-->
+                <!--<div class="ContinueLoadBox" id="ContinueLoadBox">-->
+                    <!--<a class="ContinueLoad" href="javascript:void(0);">点击继续加载</a>-->
+                <!--</div>-->
+            </div>
+            <!--floor7猜你喜欢结束-->
+
+        </div>
+        <!--商品结束-->
+    </div>
+    <!--页尾-->
+    <div class="footer">
+        <div class="lineup"></div>
+        <ul class="footerlinks">
+            <li><a  href="login.html">登录</a></li>
+            <li><a  href="registered.html;">注册</a></li>
+            <li><a  href="javascript:;">反馈</a></li>
+            <li><a  href="javascript:;" onclick="window.scroll(0,0)">回到顶部</a></li>
+        </ul>
+        <div class="lineup"></div>
+        <ul class="footerPlatforms">
+            <li ><a href="app.html" class="pic1">客户端</a></li>
+            <li ><a href="javascript:;" class="pic2">触屏版</a></li>
+            <li ><a href="javascript:;" class="pic3">电脑版</a></li>
+        </ul>
+        <div class="lineup"></div>
+        <div class="copyright">Copyright © 2012-2016 京东JD.com 版权所有</div>
+        <div class="lineup"></div>
+    </div>
+    <!--页尾结束-->
+</div>
+<script src="js/height.js"></script>
+<script src="js/slide.js"></script>
+<script src="js/HandSlide.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/youLike.js"></script>
+</body>
+</html>
+>>>>>>> first commit

@@ -1,0 +1,366 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+body {
+    font: normal 100% Helvetica,Arial,sans-serif;
+
+    /*min-width: 330px;*/
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    /*background-color: #f5f5f5;*/
+    /*height: 3000px;*/
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -moz-tap-highlight-color: rgba(0,0,0,0);
+
+
+    -moz-user-select: none; /*Â»Ã°ÂºÃ¼*/
+    -webkit-user-select: none; /*webkitÃ¤Â¯Ã€Ã€Ã†Ã·*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*Ã”Ã§Ã†ÃšÃ¤Â¯Ã€Ã€Ã†Ã·*/
+    user-select: none;
+}
+a{
+    text-decoration:underline;
+    color: #000000;
+}
+input{
+    outline: none;
+}
+.LoginHeader{
+    transform-origin: 0px 0px 0px;
+    opacity: 1;
+    transform: scale(1, 1);
+    background: url("../sucai/header-bg.png") repeat-x #efefef;
+    position: relative;
+    z-index: 1;
+    height: 44px;
+    background-size: 100% 44px;
+    border-bottom: 1px solid #bfbfbf;
+}
+.LoginHeader .back{
+    width: 40px;
+    height: 44px;
+    float: left;
+    background: transparent url("../sucai/loginarrow.png") no-repeat 4px 13px;
+}
+.LoginHeader h1{
+    height: 44px;
+    line-height: 44px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+}
+.LogoinCommonBox{
+    width: 100%;
+    position: relative;
+    max-width: 640px;
+    min-width: 320px;
+    overflow: hidden;
+    margin: 0 auto;
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+.LogoinCommonBox .main{
+    padding: 20px 15px 0;
+}
+.LogoinCommonBox .main .inputBox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+}
+.LogoinCommonBox .main .inputBox .inputT100{
+    padding-left: 15px;
+    width: 100%;
+    height: 44px;
+    line-height: normal;
+    border: 1px solid #D7D7D7;
+    border-radius: 3px;
+    background: #FFF ;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #252525;
+}
+.LogoinCommonBox .main .inputBox input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #dcdcdc;
+}
+.LogoinCommonBox .main .inputBox input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #dcdcdc;
+}
+.LogoinCommonBox .main .inputBox input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #dcdcdc;
+}
+.LogoinCommonBox .main .inputBox input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #dcdcdc;
+}
+.LogoinCommonBox .main .inputBox  .passWordBtnOff{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 51px;
+    height: 35px;
+    background: transparent url("../sucai/passWordBtnOff.png") no-repeat 0 0;
+    background-size: 50px;
+}
+.LogoinCommonBox .main .inputBox  .passWordBtnON{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 51px;
+    height: 35px;
+    background: transparent url("../sucai/passWordBtnON.png") no-repeat 0px 0px;
+    background-size: 50px;
+}
+.LogoinCommonBox .main .inputBox .inputBtn100 {
+    margin-top: 10px;
+    background: #e2e2e2;
+    color: #bdbdbd;
+    font-weight: 700;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 17px;
+}
+.LogoinCommonBox .main .textBox{
+    padding-top: 20px;
+    margin-bottom: 34px;
+    font-size: 14px;
+}
+.LogoinCommonBox .main .textBox a{
+    text-decoration:underline
+}
+.LogoinCommonBox .main .textBox .zhuce{
+    float: left;
+}
+.LogoinCommonBox .main .textBox .zhaohui{
+    float: right;
+}
+.LogoinCommonBox .main .FreeLogoin{
+    position: relative;
+    height: 18px;
+    padding-left: 26px;
+    line-height: 18px;
+    font-size: 13px;
+    color: #848689;
+}
+.LogoinCommonBox .main .FreeLogoin span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+}
+.LogoinCommonBox .main .FreeLogoin .FreeLogoinOn{
+    background:url("../sucai/FreeLogoin.png") no-repeat 0 0;
+    background-size: 18px;
+}
+.LogoinCommonBox .main .FreeLogoin .FreeLogoinOFF{
+    background:url("../sucai/FreeLogoinOff.png") no-repeat 0 0;
+    background-size: 18px;
+}
+.LogoinCommonBox .main .otherBox{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.LogoinCommonBox .main .otherBox .wenzi{
+    display: block;
+    margin-bottom: 13px;
+    font-size: 14px;
+    color: #666;
+    height: 14px;
+}
+.LogoinCommonBox .main .otherBox .tu{
+    /*width: 25.17%;*/
+    /*float: left;*/
+    width: 25px;
+    margin-left: 5px;
+    display: inline-block;
+    overflow: hidden;
+    height: 30px;
+    background: url(../sucai/QQlogin.png) no-repeat;
+    background-size: 285px 24px;
+    /*line-height: 100px;*/
+    /*Ê×ÐÐËõ½ø*/
+    /*text-indent: -9999px;*/
+}
+#VerificationCode{
+    display: none;
+}
+#VerificationCode .VerificationCodeText{
+    position: absolute;
+    right: 0px;
+    top: 9px;
+    width: 79px;
+    height: 25px;
+    padding-left: 7px;
+    border-left: 1px solid #D7D7D7;
+    text-align: center;
+    line-height: 25px;
+}
+#errorTiShi{
+    font-size: 13px;
+    color: #F25454;
+    margin-bottom: 8px;
+    display: none;
+}
+
+
+/*registered_html*/
+.LogoinCommonBox .main .registeredFlex{
+    display: -webkit-flex;
+    display: flex;
+}
+.LogoinCommonBox .main .registeredFlex .registeredPhoneText{
+    -webkit-flex: 1;
+    flex: 1;
+    padding-left: 15px;
+    height: 44px;
+    line-height: normal;
+    border: 1px solid #D7D7D7;
+    border-radius: 3px;
+    background: #FFF ;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #252525;
+}
+.LogoinCommonBox .main .registeredFlex .registeredPhoneTextBtnOff{
+    border: 1px solid #E2E2E2;
+    background: #E2E2E2 none repeat scroll 0% 0%;
+    cursor: default;
+    color: #BDBDBD;
+
+    float: right;
+    overflow: hidden;
+    width: 44.1379%;
+    height: 42px;
+    border-radius: 3px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 14px;
+
+    margin-left: 15px;
+}
+.LogoinCommonBox .main .registeredFlex .registeredPhoneTextBtnON{
+    border: 1px solid #ff0000;
+    background: #fff none repeat scroll 0% 0%;
+    cursor: default;
+    color:#ff0000;
+
+    float: right;
+    overflow: hidden;
+    width: 44.1379%;
+    height: 42px;
+    border-radius: 3px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 14px;
+
+    margin-left: 15px;
+}
+.LogoinCommonBox .main .Protocols{
+    margin: 13px 0 14px;
+    font-size: 13px;
+    color: #848689;
+}
+.LogoinCommonBox .main .Protocols a{
+    color: #F25454;
+    text-decoration: underline;
+    display: inline-block;
+    height: 13px;
+}
+/*registered_html ½áÊø*/
+
+/*PasswordRetake_html*/
+.PasswordRetakeHeader{
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #BFBFBF;
+    /*background: transparent url("../sucai/header-bg.png") repeat-x scroll 0% 0%;*/
+    background: url("../sucai/header-bg.png") repeat-x #efefef;
+    text-align: center;
+    color: #252525;
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+}
+.PasswordRetakeHeader a{
+    display: block;
+    width: 40px;
+    height: 44px;
+    background: transparent url("../sucai/loginarrow.png") no-repeat scroll center center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+.PasswordRetakeContentBox{
+    margin-top: -14px;
+    padding: 14px 10px;
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    box-sizing: border-box;
+}
+.PasswordRetakeContentBox label{
+    display: inline-block;
+    height: 46px;
+    line-height: 46px;
+    font-size: 15px;
+}
+.PasswordRetakeContentBox .PasswordRetakeinputBox{
+    position: relative;
+}
+.PasswordRetakeContentBox .PasswordRetakeinputBox span{
+    position: absolute;
+    display: block;
+    right: 1px;
+    bottom: 6px;
+    width: 90px;
+    height: 26px;
+    padding-left: 10px;
+    border-left: 1px solid #BFBFBF;
+    text-align: center;
+    line-height:26px;
+}
+.PasswordRetakeContentBox .PasswordRetakeinputText{
+    height: 38px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.PasswordRetakeContentBox .nextBtn{
+    background-color: #CCC;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    color: #FFF;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    clear: right;
+    margin-top: 35px;
+    margin-bottom: 14px;
+    font-size: 17px;
+}
+/*PasswordRetake_html ½áÊø*/
+
