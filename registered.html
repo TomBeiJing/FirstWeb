@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/logoin.css" rel="stylesheet">
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div class="LoginHeader">
+    <a class="back" href="javascript:history.back(-1)" onclick="javascript:history.back(-1);"></a>
+    <h1>京东注册</h1>
+</div>
+<div class="LogoinCommonBox">
+    <div class="main">
+        <form>
+            <p id="errorTiShi">手机号格式错误</p>
+            <div class="inputBox registeredFlex" id="registeredPhoneBox">
+                <input id="registeredPhoneText" class="registeredPhoneText" type="text" placeholder="请输入手机号">
+                <div id="registeredPhoneTextBtn" class="registeredPhoneTextBtnOff">获取短信验证码</div>
+            </div>
+            <div class="inputBox" id="MessageCode">
+                <input id="MessageCodeText" class="inputT100" type="text" placeholder="请输入短信验证码">
+            </div>
+
+            <div class="inputBox" id="registeredPassWordBox">
+                <input id="registeredPassWordText" class="inputT100" type="password" placeholder="请设置6-20位登录密码">
+                <span id="registeredPassWordBtn" class="passWordBtnON"></span>
+            </div>
+
+            <div class="Protocols">
+                注册即视为同意
+                <a href="http://m.jd.com/help/app/register.html">《京东用户注册协议》</a>
+            </div>
+            <div class="inputBox">
+                <div  class="inputBtn100" id="registeredInputBtn">注册</div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="js/registered.js"></script>
+</body>
+</html>
