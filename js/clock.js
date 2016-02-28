@@ -16,7 +16,7 @@
 //         }
 //     })
 // });
- Countdown(2016-03-20T15:26:00);
+ Countdown('2016-03-20T15:26:00');
 function Countdown(data){
 //Date对象返回的都是当前时区的时间。
     var CountdownHour=document.getElementById("CountdownHour");
