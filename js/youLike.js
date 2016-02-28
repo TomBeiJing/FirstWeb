@@ -387,24 +387,25 @@ var data={
     }
 };
 
-$(function(){
-    $.ajax({
-        type:"get",
-        url:"../FirstWeb/YouLikeData1.php",
-        success:function(data){
-            var JsonData=JSON.parse(data);
+// $(function(){
+//     $.ajax({
+//         type:"get",
+//         url:"../FirstWeb/YouLikeData1.php",
+//         success:function(data){
+//             var JsonData=JSON.parse(data);
+//             pinterest(JsonData);
+
+//             //Countdown('2016-01-20T15:26:00');//定时格式以2016-01-19T15:26:00为例
+//             //如果日期采用连词线（-）格式分隔，且具有前导0，JavaScript会认为这是一个ISO格式的日期字符串，导致返回的时间是以UTC时区计算的。
+//         },
+//         error:function(){
+//             console.log("error");
+//         }
+//     })
+// });
+
+            var JsonData=JSON.parse(data1);
             pinterest(JsonData);
-
-            //Countdown('2016-01-20T15:26:00');//定时格式以2016-01-19T15:26:00为例
-            //如果日期采用连词线（-）格式分隔，且具有前导0，JavaScript会认为这是一个ISO格式的日期字符串，导致返回的时间是以UTC时区计算的。
-        },
-        error:function(){
-            console.log("error");
-        }
-    })
-});
-
-
 
 function pinterest(data){
     var pinterestImgDataIndex=0;
