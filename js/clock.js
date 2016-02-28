@@ -4,7 +4,7 @@
 $(function(){
     $.ajax({
         type:"get",
-        url:"https://github.com/TomBeiJing/FirstWeb/edit/gh-pages/d1.php",
+        url:"../d1.php",
         success:function(data){
             Countdown(data);
             //Countdown('2016-01-20T15:26:00');//定时格式以2016-01-19T15:26:00为例
