@@ -4,7 +4,7 @@
 $(function(){
     $.ajax({
         type:"get",
-        url:"../d1.php",
+        url:"../FirstWeb/d1.php",
         success:function(data){
             Countdown(data);
             //Countdown('2016-01-20T15:26:00');//定时格式以2016-01-19T15:26:00为例
