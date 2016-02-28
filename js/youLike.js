@@ -390,7 +390,7 @@ var data={
 $(function(){
     $.ajax({
         type:"get",
-        url:"http://192.168.2.108/work25/YouLikeData1.php",
+        url:"../FirstWeb/YouLikeData1.php",
         success:function(data){
             var JsonData=JSON.parse(data);
             pinterest(JsonData);
