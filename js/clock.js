@@ -6,7 +6,7 @@ $(function(){
         type:"get",
         url:"../FirstWeb/d1.php",
         success:function(data){
-            Countdown(2016-03-20T15:26:00);
+            Countdown(2016-03-22T17:50:00);
             //Countdown('2016-01-20T15:26:00');//定时格式以2016-01-19T15:26:00为例
             //如果日期采用连词线（-）格式分隔，且具有前导0，JavaScript会认为这是一个ISO格式的日期字符串，导致返回的时间是以UTC时区计算的。
         },
