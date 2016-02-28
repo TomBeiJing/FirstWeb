@@ -6,7 +6,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1027569322",
-                "wname": "ÑÅ¸ß¼ÒÓÃ²ÊÉ«¼ÓºñÀ¬»ø´üÖĞºÅËæ»úÉ«·¢»õ5¾í150Ö»",
+                "wname": "é›…é«˜å®¶ç”¨å½©è‰²åŠ åšåƒåœ¾è¢‹ä¸­å·éšæœºè‰²å‘è´§5å·150åª",
                 "jdPrice": "13.90",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2107/63/304108433/320932/2d6479ec/55feb087N3ea5a646.jpg",
                 "lookSimilar": "1",
@@ -15,7 +15,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1372048990",
-                "wname": "ÆßÆ¥ÀÇ´¿ÃŞÍà×ÓÄĞÊ¿ÄĞÍàĞİÏĞÉÌÎñÍà×Ó6Ë«¼òÔ¼ÀñºĞ×°",
+                "wname": "ä¸ƒåŒ¹ç‹¼çº¯æ£‰è¢œå­ç”·å£«ç”·è¢œä¼‘é—²å•†åŠ¡è¢œå­6åŒç®€çº¦ç¤¼ç›’è£…",
                 "jdPrice": "48.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t742/342/1245262321/140080/15e253b8/5523ad20N5c51af76.jpg",
                 "lookSimilar": "1",
@@ -24,7 +24,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1334529",
-                "wname": "BIAZELightning/Micro¶şºÏÒ»Êı¾İÏßµçÔ´ÏßìÅ²ÊµÆÊÊÓÃÆ»¹ûiPhone6s/PlusiPadAirProMiniÈıĞÇĞ¡Ã×½ğÉ«",
+                "wname": "BIAZELightning/MicroäºŒåˆä¸€æ•°æ®çº¿ç”µæºçº¿ç‚«å½©ç¯é€‚ç”¨è‹¹æœiPhone6s/PlusiPadAirProMiniä¸‰æ˜Ÿå°ç±³é‡‘è‰²",
                 "jdPrice": "19.90",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1174/265/251781351/46686/63d3a610/55190ef9N6095f3ad.jpg",
                 "lookSimilar": "1",
@@ -33,7 +33,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1286815",
-                "wname": "ÂíÁ¬Å«°ÂÀ¼µÏ£¨MarinoOrlandi£©°®¶ûµûÓ¡»¨Å®Ê¿ÊµÓÃÊÖ×¥°üÁãÇ®°ü·ÈÉ«",
+                "wname": "é©¬è¿å¥´å¥¥å…°è¿ªï¼ˆMarinoOrlandiï¼‰çˆ±å°”è¶å°èŠ±å¥³å£«å®ç”¨æ‰‹æŠ“åŒ…é›¶é’±åŒ…å•¡è‰²",
                 "jdPrice": "49.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t496/363/673571907/191912/c2c17ad7/547d516aN3aa5510c.jpg",
                 "lookSimilar": "1",
@@ -42,7 +42,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1748319363",
-                "wname": "USCAMELĞÂ¿î¸ß¶ËÍûÔ¶¾µ¸ßÇå¸ß±¶Î¢¹âÒ¹ÊÓË«Í²ÍûÔ¶¾µºÚÉ«UW008F",
+                "wname": "USCAMELæ–°æ¬¾é«˜ç«¯æœ›è¿œé•œé«˜æ¸…é«˜å€å¾®å…‰å¤œè§†åŒç­’æœ›è¿œé•œé»‘è‰²UW008F",
                 "jdPrice": "198.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2560/23/237995378/334948/db97bce4/563dc0a5Nd7cbfa08.jpg",
                 "lookSimilar": "1",
@@ -51,7 +51,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "850164",
-                "wname": "NestleÈ¸³²ÖĞÀÏÄêÓªÑøÄÌ·Û400g´ü×°",
+                "wname": "Nestleé›€å·¢ä¸­è€å¹´è¥å…»å¥¶ç²‰400gè¢‹è£…",
                 "jdPrice": "39.90",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1012/317/1276928417/132318/ca80f7c3/558a7174N6c0fc5e0.jpg",
                 "lookSimilar": "0",
@@ -60,7 +60,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "209951",
-                "wname": "Î¬´ïÎÀÉúÖ½À¶É«¾­µä140g¾íÖ½*10¾í",
+                "wname": "ç»´è¾¾å«ç”Ÿçº¸è“è‰²ç»å…¸140gå·çº¸*10å·",
                 "jdPrice": "18.90",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1342/354/428785858/111352/ce701549/55769c04Nbd1ad1d0.jpg",
                 "lookSimilar": "1",
@@ -69,7 +69,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1341325",
-                "wname": "ÂÌÖ®Ô´¿ÕÆø¼×È©×Ô²âºĞ£¨¾«×¼×°£©",
+                "wname": "ç»¿ä¹‹æºç©ºæ°”ç”²é†›è‡ªæµ‹ç›’ï¼ˆç²¾å‡†è£…ï¼‰",
                 "jdPrice": "39.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1879/118/396743841/117403/251ae184/5604b074N634ac653.jpg",
                 "lookSimilar": "1",
@@ -78,7 +78,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1192475",
-                "wname": "ÍêÃÀÂ«Üö½º40g3Ö§×°",
+                "wname": "å®Œç¾èŠ¦èŸèƒ¶40g3æ”¯è£…",
                 "jdPrice": "69.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t595/197/509204436/102860/1bd3c1b/546e9e81N8f2d62eb.jpg",
                 "lookSimilar": "1",
@@ -87,7 +87,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "543107",
-                "wname": "ÃÀµÄ(Midea)F05-15A(S)£¨ÉÏ³öË®)5ÉıĞ¡³ø±¦£¨°×É«+Ó¡»¨£©",
+                "wname": "ç¾çš„(Midea)F05-15A(S)ï¼ˆä¸Šå‡ºæ°´)5å‡å°å¨å®ï¼ˆç™½è‰²+å°èŠ±ï¼‰",
                 "jdPrice": "399.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t658/333/1140835367/67076/a002f396/54b3a993Ndb4e6946.jpg",
                 "lookSimilar": "1",
@@ -96,7 +96,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1251332",
-                "wname": "Á¼Æ·ÆÌ×ÓÈâ¸ÉÈâ¸¬ÊÖËºÏãÀ±Å£Èâ¸É80g",
+                "wname": "è‰¯å“é“ºå­è‚‰å¹²è‚‰è„¯æ‰‹æ’•é¦™è¾£ç‰›è‚‰å¹²80g",
                 "jdPrice": "19.90",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1612/37/359077648/230473/8767dcb7/5576ca24Ne4790b0a.jpg",
                 "lookSimilar": "1",
@@ -105,7 +105,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1160126",
-                "wname": "Ì©¹ú½ø¿ÚĞ¡ÀÏ°å¿¾º£Ì¦¾í£¨Ô­Î¶£©36g",
+                "wname": "æ³°å›½è¿›å£å°è€æ¿çƒ¤æµ·è‹”å·ï¼ˆåŸå‘³ï¼‰36g",
                 "jdPrice": "23.50",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1771/315/509193859/168006/27480f2e/55d3fab4Nc53a3bea.jpg",
                 "lookSimilar": "1",
@@ -114,7 +114,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "2002459",
-                "wname": "¶à·Ò(Dove)ÄĞÊ¿+»¤ÀíÇ¿ÈÍÏ´·¢Â¶Ñø¸ù½¡·¢50ml(ÌåÑé×°)",
+                "wname": "å¤šèŠ¬(Dove)ç”·å£«+æŠ¤ç†å¼ºéŸ§æ´—å‘éœ²å…»æ ¹å¥å‘50ml(ä½“éªŒè£…)",
                 "jdPrice": "15.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2092/143/576309414/55402/210a0812/5618e447N4b169ec8.jpg",
                 "lookSimilar": "1",
@@ -123,7 +123,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1250262",
-                "wname": "ÃÀÔŞ³¼(MeadJohnson)°²Ó¤±¦A+½Ï´óÓ¤¶ùÅä·½ÄÌ·Û2¶Î(6-12¸öÔÂ½Ï´óÓ¤¶ùÊÊÓÃ)900¿Ë(½ø¿ÚÄÌÔ´)ĞÂ°ü×°",
+                "wname": "ç¾èµè‡£(MeadJohnson)å®‰å©´å®A+è¾ƒå¤§å©´å„¿é…æ–¹å¥¶ç²‰2æ®µ(6-12ä¸ªæœˆè¾ƒå¤§å©´å„¿é€‚ç”¨)900å…‹(è¿›å£å¥¶æº)æ–°åŒ…è£…",
                 "jdPrice": "220.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2275/46/1371263351/111089/5403fc2f/56581dbeNa26b8a9e.jpg",
                 "lookSimilar": "1",
@@ -132,7 +132,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1547652689",
-                "wname": "Òâ´óÀûBaillrÊÖ°üÄĞÊ¿ÕæÆ¤ÄĞ¿îÊÖÄÃ°ü³¤¿îÇ®°üĞİÏĞÊÖ×¥°üÉÁµçÎÆ×ØÉ«",
+                "wname": "æ„å¤§åˆ©Baillræ‰‹åŒ…ç”·å£«çœŸçš®ç”·æ¬¾æ‰‹æ‹¿åŒ…é•¿æ¬¾é’±åŒ…ä¼‘é—²æ‰‹æŠ“åŒ…é—ªç”µçº¹æ£•è‰²",
                 "jdPrice": "69.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2113/339/1739255285/281841/55ad4174/56725ac6N594de1a5.jpg",
                 "lookSimilar": "1",
@@ -141,7 +141,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1502262878",
-                "wname": "ÒÚÏí±¦±¦Í¯³µÈıÂÖ¶ùÍ¯»¬°å³µ¼Ó¿íÌ¤°å³µÕÛµş¿ÉÉı½µÅ¤Å¤³µĞ¡º¢Íæ¾ßÂÌÉ«",
+                "wname": "äº¿äº«å®å®ç«¥è½¦ä¸‰è½®å„¿ç«¥æ»‘æ¿è½¦åŠ å®½è¸æ¿è½¦æŠ˜å å¯å‡é™æ‰­æ‰­è½¦å°å­©ç©å…·ç»¿è‰²",
                 "jdPrice": "78.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1789/334/374325620/113944/6fc04052/55d123f7N8d18f83d.jpg",
                 "lookSimilar": "1",
@@ -150,7 +150,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "334420",
-                "wname": "ÂíÀ´Î÷ÑÇ½ø¿ÚÒæ²ıÀÏ½Ö¼´ÈÜ¿§·È200g",
+                "wname": "é©¬æ¥è¥¿äºšè¿›å£ç›Šæ˜Œè€è¡—å³æº¶å’–å•¡200g",
                 "jdPrice": "19.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t1816/178/1403632398/179402/64f3a329/55f00385N903dddfc.jpg",
                 "lookSimilar": "1",
@@ -159,7 +159,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1800510439",
-                "wname": "¡¾2Ö»ÃâÓÊ¡¿ÄÏ¼«ÈË¼Ò·ÄÇï¶¬Å¯ºÍ¶ÌÃ«ÈŞ¼ĞÃŞ¼Óºñ×øµæ°ì¹«²Í×ÀÒÎ×ÓÑ§Éúµæ×Ó¿§É«40cm*40cm",
+                "wname": "ã€2åªå…é‚®ã€‘å—æäººå®¶çººç§‹å†¬æš–å’ŒçŸ­æ¯›ç»’å¤¹æ£‰åŠ åšåå«åŠå…¬é¤æ¡Œæ¤…å­å­¦ç”Ÿå«å­å’–è‰²40cm*40cm",
                 "jdPrice": "9.90",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2209/133/665350080/226118/ab112f4b/562112deN3f82fd64.jpg",
                 "lookSimilar": "1",
@@ -168,7 +168,7 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1754375110",
-                "wname": "ºÃ¸£ÆøJM-812È«×Ô¶¯×ãÔ¡ÅèÉîÍ°Ï´½ÅÅèJM-812×ÔÖú±ê×¼°æ",
+                "wname": "å¥½ç¦æ°”JM-812å…¨è‡ªåŠ¨è¶³æµ´ç›†æ·±æ¡¶æ´—è„šç›†JM-812è‡ªåŠ©æ ‡å‡†ç‰ˆ",
                 "jdPrice": "159.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_jfs/t2197/134/1115586162/136403/a602f450/5679187eN727f794b.jpg",
                 "lookSimilar": "1",
@@ -177,17 +177,17 @@ echo'{
             {
                 "type": "ware",
                 "wareId": "1106432",
-                "wname": "ÃÀµÄ£¨Midea£©F60-15WB5(Y)60ÉıµçÈÈË®Æ÷",
+                "wname": "ç¾çš„ï¼ˆMideaï¼‰F60-15WB5(Y)60å‡ç”µçƒ­æ°´å™¨",
                 "jdPrice": "1298.00",
                 "imageurl": "http://m.360buyimg.com/mobilecms/s276x276_g15/M00/19/11/rBEhWFNbQ5IIAAAAAACZXDlEBTEAAMcKAIeVNgAAJl0232.jpg",
                 "lookSimilar": "1",
                 "sourceValue": "0_68_19_1106432_5_1_null"
             }
         ],
-        "floorIntro": "09: 31ÎªÄãÍÆ¼öÒÑ¸üĞÂ",
+        "floorIntro": "09: 31ä¸ºä½ æ¨èå·²æ›´æ–°",
         "p": "620003",
         "code": "0",
         "totalPage": 23,
         "expid": "105"
     }
-}';
+}'
