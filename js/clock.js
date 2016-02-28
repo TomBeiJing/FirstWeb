@@ -4,11 +4,11 @@
 $(function(){
     $.ajax({
         type:"get",
-        url:"http://192.168.2.108/work25/d1.php",
+        url:"https://github.com/TomBeiJing/FirstWeb/edit/gh-pages/d1.php",
         success:function(data){
             Countdown(data);
-            //Countdown('2016-01-20T15:26:00');//¶¨Ê±¸ñÊ½ÒÔ2016-01-19T15:26:00ÎªÀı
-            //Èç¹ûÈÕÆÚ²ÉÓÃÁ¬´ÊÏß£¨-£©¸ñÊ½·Ö¸ô£¬ÇÒ¾ßÓĞÇ°µ¼0£¬JavaScript»áÈÏÎªÕâÊÇÒ»¸öISO¸ñÊ½µÄÈÕÆÚ×Ö·û´®£¬µ¼ÖÂ·µ»ØµÄÊ±¼äÊÇÒÔUTCÊ±Çø¼ÆËãµÄ¡£
+            //Countdown('2016-01-20T15:26:00');//å®šæ—¶æ ¼å¼ä»¥2016-01-19T15:26:00ä¸ºä¾‹
+            //å¦‚æœæ—¥æœŸé‡‡ç”¨è¿è¯çº¿ï¼ˆ-ï¼‰æ ¼å¼åˆ†éš”ï¼Œä¸”å…·æœ‰å‰å¯¼0ï¼ŒJavaScriptä¼šè®¤ä¸ºè¿™æ˜¯ä¸€ä¸ªISOæ ¼å¼çš„æ—¥æœŸå­—ç¬¦ä¸²ï¼Œå¯¼è‡´è¿”å›çš„æ—¶é—´æ˜¯ä»¥UTCæ—¶åŒºè®¡ç®—çš„ã€‚
         },
         error:function(){
             console.log("error");
@@ -16,7 +16,7 @@ $(function(){
     })
 });
 function Countdown(data){
-//Date¶ÔÏó·µ»ØµÄ¶¼ÊÇµ±Ç°Ê±ÇøµÄÊ±¼ä¡£
+//Dateå¯¹è±¡è¿”å›çš„éƒ½æ˜¯å½“å‰æ—¶åŒºçš„æ—¶é—´ã€‚
     var CountdownHour=document.getElementById("CountdownHour");
     var CountdownMinute=document.getElementById("CountdownMinute");
     var CountdownSeconds=document.getElementById("CountdownSeconds");
@@ -24,7 +24,7 @@ function Countdown(data){
     var d1=Date.parse(data);
     CountdownTimer=setInterval(function(){
         var d2=Date.now();
-        var TargetData=Math.floor(d1-d2-8*1000*3600)/1000;//£¨ÒÔ×ª»»Îª£¬µ¥Î»ÎªÃë£©¡°+8*1000*3600¡±ÊÇÓÃÀ´²¹±¾µØÓëUTCµÄÊ±²î
+        var TargetData=Math.floor(d1-d2-8*1000*3600)/1000;//ï¼ˆä»¥è½¬æ¢ä¸ºï¼Œå•ä½ä¸ºç§’ï¼‰â€œ+8*1000*3600â€æ˜¯ç”¨æ¥è¡¥æœ¬åœ°ä¸UTCçš„æ—¶å·®
         var Hour=Math.floor(TargetData/(3600));
         var Minute=Math.floor((TargetData-Hour*3600)/60);
         var Seconds=Math.floor(TargetData-Hour*3600-Minute*60);
@@ -32,11 +32,11 @@ function Countdown(data){
             clearInterval(CountdownTimer);
             $.ajax({
                 type:"get",
-                url:"http://192.168.2.108//work25/d2.php",//Èç¹û·ÃÎÊµØÖ·Îªlocalhost£¬ÕâÀïÒ²Ğ´localhost¡£ÓÉÓÚÒªÔÚÂ·ÓÉÖĞ·ÃÎÊ192.168.2.115
+                url:"https://github.com/TomBeiJing/FirstWeb/edit/gh-pages/d2.php",//å¦‚æœè®¿é—®åœ°å€ä¸ºlocalhostï¼Œè¿™é‡Œä¹Ÿå†™localhostã€‚ç”±äºè¦åœ¨è·¯ç”±ä¸­è®¿é—®192.168.2.115
                 success:function(data){
                     Countdown(data);
-                    //Countdown('2016-01-20T15:26:00');//¶¨Ê±¸ñÊ½ÒÔ2016-01-19T15:26:00ÎªÀı
-                    //Èç¹ûÈÕÆÚ²ÉÓÃÁ¬´ÊÏß£¨-£©¸ñÊ½·Ö¸ô£¬ÇÒ¾ßÓĞÇ°µ¼0£¬JavaScript»áÈÏÎªÕâÊÇÒ»¸öISO¸ñÊ½µÄÈÕÆÚ×Ö·û´®£¬µ¼ÖÂ·µ»ØµÄÊ±¼äÊÇÒÔUTCÊ±Çø¼ÆËãµÄ¡£
+                    //Countdown('2016-01-20T15:26:00');//å®šæ—¶æ ¼å¼ä»¥2016-01-19T15:26:00ä¸ºä¾‹
+                    //å¦‚æœæ—¥æœŸé‡‡ç”¨è¿è¯çº¿ï¼ˆ-ï¼‰æ ¼å¼åˆ†éš”ï¼Œä¸”å…·æœ‰å‰å¯¼0ï¼ŒJavaScriptä¼šè®¤ä¸ºè¿™æ˜¯ä¸€ä¸ªISOæ ¼å¼çš„æ—¥æœŸå­—ç¬¦ä¸²ï¼Œå¯¼è‡´è¿”å›çš„æ—¶é—´æ˜¯ä»¥UTCæ—¶åŒºè®¡ç®—çš„ã€‚
                 },
                 error:function(){
                     console.log("error");
