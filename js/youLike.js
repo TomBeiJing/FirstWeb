@@ -404,8 +404,7 @@ var data={
 //     })
 // });
 
-            var JsonData=JSON.parse(data1);
-            pinterest(JsonData);
+            pinterest(data1);
 
 function pinterest(data){
     var pinterestImgDataIndex=0;
